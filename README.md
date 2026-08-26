@@ -22,4 +22,4 @@ Each session represents one stage of the mountain, introducing a new skill throu
 | 🏔️ **Network Automation Expert** | *The summit badge, awarded to participants who successfully complete the entire learning journey and build a complete network automation workflow integrating all the skills acquired.* |
 
 
- 
+See you at the mountain with the NetClan !
