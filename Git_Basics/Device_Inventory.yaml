@@ -1,1 +1,49 @@
+# ==============================================================================
+# File: inventory/switches.yml
+# Description: Beginner-friendly network switch inventory file
+# ==============================================================================
+
+# SECTION 1: GLOBAL SETTINGS (Applies to all network devices)
+all:
+  vars:
+    ansible_connection: network_cli     # Standard SSH connection for network gear
+    ansible_network_os: cisco.ios.ios    # Device operating system syntax
+    ansible_user: admin_automation      # Central automation service account
+    dns_server: 10.10.1.10             # Primary DNS server for resolution
+    domain_name: lab.automation.local   # Domain suffix for hostnames
+
+# SECTION 2: CORE SWITCHES (Data Center Backbone)
+  children:
+    core_switches:
+      hosts:
+        SW-CORE-01:
+          ansible_host: 192.168.1.10    # Management IP address for SSH
+          device_role: core
+          management_vlan: 10
+          vlan_name: MGMT_NETWORK
+          subnet_cidr: 10.10.10.0/24
+
+        SW-CORE-02:
+          ansible_host: 192.168.1.11
+          device_role: core
+          management_vlan: 10
+          vlan_name: MGMT_NETWORK
+          subnet_cidr: 10.10.10.0/24
+
+# SECTION 3: ACCESS SWITCHES (User & Campus Connectivity)
+    access_switches:
+      hosts:
+        SW-ACCESS-01:
+          ansible_host: 192.168.1.20
+          device_role: access
+          user_vlan: 20
+          vlan_name: USER_DATA
+          subnet_cidr: 10.10.20.0/24
+
+        SW-ACCESS-02:
+          ansible_host: 192.168.1.21
+          device_role: access
+          user_vlan: 20
+          vlan_name: USER_DATA
+          subnet_cidr: 10.10.20.0/24
 
