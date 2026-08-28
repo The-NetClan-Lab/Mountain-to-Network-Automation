@@ -31,8 +31,13 @@ All configs are managed via Git and deployed automatically via CI/CD pipelines.
 
 ### 7. Devices in production
 
-1.Cisco Catalyst 9300 Series
-2.Arista 7050X3 Series
-3.Juniper EX4400 Series
-4.NVIDIA Spectrum SN2700
-5.Aruba CX 6300 Series
+1. Cisco Catalyst 9300 Series
+
+2. Arista 7050X3 Series
+
+3. Juniper EX4400 Series
+
+4. NVIDIA Spectrum SN2700
+
+5. Aruba CX 6300 Series
+
