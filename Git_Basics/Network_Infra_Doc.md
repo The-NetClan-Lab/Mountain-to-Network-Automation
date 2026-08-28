@@ -29,7 +29,7 @@ All configs are managed via Git and deployed automatically via CI/CD pipelines.
 3. Push Update: Push revert commit to `main` to trigger redeployment.
 4. Verify Recovery: Run automated health checks to confirm traffic normalization.
 
-### 7. Devices in production
+### 7. Devices in production at Lulea Data Center
 
 1.Cisco Catalyst 9300 Series
 2.Arista 7050X3 Series
