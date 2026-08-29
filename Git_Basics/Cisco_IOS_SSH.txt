@@ -1,0 +1,22 @@
+hostname Gateway-Router-01
+!
+ip domain-name local.domain
+ip ssh version 2
+ip ssh time-out 60
+ip ssh authentication-retries 3
+!
+username admin privilege 15 secret 0 C1sc0$ecurePass!
+!
+crypto key generate rsa modulus 2048
+!
+aaa new-model
+aaa authentication login default local
+aaa authorization exec default local
+!
+line vty 0 4
+ transport input ssh
+ exec-timeout 10 0
+ login authentication default
+ logging synchronous
+!
+end
