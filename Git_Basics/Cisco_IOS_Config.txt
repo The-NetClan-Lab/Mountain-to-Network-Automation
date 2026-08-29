@@ -1,0 +1,23 @@
+hostname Core-Switch-01
+!
+ip domain-name enterprise.local
+ip ssh version 2
+crypto key generate rsa modulus 2048
+!
+vlan 10,20
+!
+interface GigabitEthernet0/1
+ description Trunk to Access Switch
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20
+!
+interface Vlan10
+ description Management Network
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+!
+line vty 0 4
+ transport input ssh
+ login local
+!
+end
